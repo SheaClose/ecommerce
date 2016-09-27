@@ -1,0 +1,45 @@
+<style media="screen">
+  .Response{
+    border: 1px solid black
+  }
+</style>
+
+<h1>Admin!</h1>
+<p>
+  <h4>Add new product:</h4>
+  <hr>
+<input type="text" placeholder="Description" ng-model="description">
+<input type="text"placeholder="Size" ng-model="size">
+<input type="text" placeholder="Price" ng-model="price">
+<button type="button" ng-click="createNewProduct()">Submit</button>
+
+
+</p>
+<hr>
+<p>
+  <h4>Edit product:</h4>
+  <hr>
+<input type="text" placeholder="Product Id:" ng-model="editproductId">
+<input type="text" placeholder="Description" ng-model="editdescription">
+<input type="text"placeholder="Size" ng-model="editsize">
+<input type="text" placeholder="Price" ng-model="editprice">
+<button type="button" ng-click="modifyProduct()">Submit</button>
+
+</div>
+</p>
+
+
+
+
+
+
+
+<div class="Response">
+  <ul ng-repeat="data in postedData">
+    <ol>Product Id: {{data._id}}</ol>
+    <ol>Desc: {{data.title}}</ol>
+    <ol>Size: {{data.description}}</ol>
+    <ol>Price: ${{data.price}}</ol>
+    <ol><button type="button" ng-click="deleteProduct(data._id)">Delete</button></ol>
+  </ul>
+</div>
