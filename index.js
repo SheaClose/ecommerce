@@ -3,13 +3,13 @@ const  express = require("express")
      , app = express()
      , port = 4000
      , cors = require("cors")
-     , routes = require("./features/routes.js")
+     , masterRoutes = require("./masterRoutes.js")
      , mongoose = require("mongoose")
      , mongoUri = "mongodb://localhost:27017/ecommerce"
 app.use(json())
 app.use(cors())
 app.use(express.static("angular"))
-routes(app)
+masterRoutes(app)
 
 mongoose.connect(mongoUri);
 mongoose.connection.once("open", function(){console.log(`connected to MongoDb @ ${mongoUri}`)})
